@@ -75,7 +75,7 @@ if (image.image is not None) and (not image.is_empty()):
 
     # Get the predicted class
     prediction = model.predict(image.get_prediction_ready())
-    class_list = ['angel', 'sword', 'airplane', 'crab', 'diamond', 'lion']
+    class_list = ['angel', 'sword', 'airplane', 'camel', 'diamond', 'lion']
 
     col3, col4 = st.beta_columns(2)
 
