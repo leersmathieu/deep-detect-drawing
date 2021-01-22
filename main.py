@@ -7,10 +7,10 @@ from src import Image, Model
 model = Model()
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
-st.set_page_config(page_title="Deep detect handwriting")
+st.set_page_config(page_title="Deep detect drawing")
 
 # Content
-st.title("Deep detect handwriting")
+st.title("Deep detect drawing")
 st.markdown("""
 Deep detect object_recognition is a Python app based on a CNN model,
 to recognize you draw on the canvas from 6 choices : Angel, Sword, Crab, Airplane, Diamond and Lion.
@@ -30,7 +30,7 @@ Python dev, studying Machine Learning at BeCode.org.
 st.sidebar.header("See on github")
 st.sidebar.markdown("""
 See the code and fork this project on Github:
-[Deep Detect Handwriting repository](https://github.com/leersmathieu/deep-detect-handwriting)
+[Deep Detect Handwriting repository](https://github.com/leersmathieu/deep-detect-drawing)
 """)
 
 col1, col2 = st.beta_columns(2)
@@ -39,7 +39,7 @@ with col1:
 
     # Display a h3 title
     st.subheader("Drawing area")
-    st.markdown("draw on the canvas from 6 choices : Angel, Sword, Crab, Airplane, Diamond or Lion.")
+    st.markdown("draw on the canvas from 6 choices : Angel, Sword, Camel, Airplane, Diamond or Lion.")
 
     # Create a canvas component
     canvas_result = st_canvas(
