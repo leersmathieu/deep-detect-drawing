@@ -9,6 +9,14 @@ model = Model()
 st.set_option("deprecation.showfileUploaderEncoding", False)
 st.set_page_config(page_title="Deep detect drawing")
 
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
+local_css('assets/style.css')
+
 # Content
 st.title("Deep detect drawing")
 st.markdown("""
@@ -71,8 +79,11 @@ with col2:
 
 
 # Check if the user has written something
-if (image.image is not None) and (not image.is_empty()):
-
+if st.button('Get prediction') and (image.image is not None) and (not image.is_empty()):
+    st.markdown(
+        f'</div>',
+        unsafe_allow_html=True
+    )
     # Get the predicted class
     prediction = model.predict(image.get_prediction_ready())
     class_list = ['angel', 'sword', 'airplane', 'camel', 'diamond', 'lion']

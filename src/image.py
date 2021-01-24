@@ -27,7 +27,7 @@ class Image:
             # Scale from [0, 255] to [0, 1]
             scaled = gray_scaled / 255
 
-            # Resize to 28x28
+            # Resize to 64x64
             self.streamlit = resize(scaled, (64, 64))
 
         # Return a 28x28 (w, h) [0, 1] image
@@ -58,7 +58,7 @@ class Image:
         """Return true if self.image is an empty black image."""
 
         self.get_streamlit_displayable()
-        if np.max(self.streamlit) == np.min(self.streamlit) == .0:
+        if np.max(self.streamlit) == np.min(self.streamlit) == 0:
             return True
 
         return False
