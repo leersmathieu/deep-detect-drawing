@@ -4,7 +4,6 @@ from streamlit_drawable_canvas import st_canvas
 import pandas as pd
 from src import Image, Model
 
-model = Model()
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 st.set_page_config(page_title="Deep detect drawing")
@@ -61,29 +60,17 @@ with col1:
         key="canvas",
     )
 
-# Instantiate an Image object from the handwritten canvas
-image = Image(canvas_result.image_data)
 
-with col2:
 
-    # Display a h2 title
-    st.subheader("What the computer see")
-    st.markdown("""
-        Your draw is resized   
-        and gray-scaled
-    """)
 
-    # Display the transformed image
-    if image.image is not None:
-        st.image(image.get_streamlit_displayable(), width=290)
 
 
 # Check if the user has written something
-if st.button('Get prediction') and (image.image is not None) and (not image.is_empty()):
-    st.markdown(
-        f'</div>',
-        unsafe_allow_html=True
-    )
+if st.button('Get prediction'):
+    model = Model()
+
+    # Instantiate an Image object from the handwritten canvas
+    image = Image(canvas_result.image_data)
     # Get the predicted class
     prediction = model.predict(image.get_prediction_ready())
     class_list = ['angel', 'sword', 'airplane', 'camel', 'diamond', 'lion']
@@ -117,3 +104,16 @@ if st.button('Get prediction') and (image.image is not None) and (not image.is_e
         st.subheader("Probability distribution")
         st.markdown("Was your digit hard to recognize ?")
         st.bar_chart(chart_data.T)
+
+    with col2:
+
+        # Display a h2 title
+        st.subheader("What the computer see")
+        st.markdown("""
+            Your draw is resized   
+            and gray-scaled
+        """)
+
+        # Display the transformed image
+        if image.image is not None:
+            st.image(image.get_streamlit_displayable(), width=290)
