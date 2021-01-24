@@ -29,8 +29,8 @@ Python dev, studying Machine Learning at BeCode.org.
 
 st.sidebar.header("See on github")
 st.sidebar.markdown("""
-See the code and fork this project on Github:
-[Deep Detect Handwriting repository](https://github.com/leersmathieu/deep-detect-drawing)
+See the code of this project on Github:
+[Deep Detect Drawing repository](https://github.com/leersmathieu/deep-detect-drawing)
 """)
 
 col1, col2 = st.beta_columns(2)
