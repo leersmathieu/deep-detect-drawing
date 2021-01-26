@@ -17,7 +17,7 @@ For try this app on your computer with docker, just enter this command in your t
 It's magic.
 
 ```docker
-docker run -p 5000:5000 leersma/deep-detect-drawing:latest
+docker run -p 8501:8501 leersma/deep-detect-drawing:latest
 ```
 just pay attention to the port used
-If you run it on port 5000 as in the example, you can easily access it like this: http://localhost:5000/.
+If you run it on port 8501 as in the example, you can easily access it like this: http://localhost:8501/.
