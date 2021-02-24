@@ -4,6 +4,9 @@
 Deep detect Drawing is a app based on a CNN model, to recognize a few draw.
 You can check the model construction [here](https://github.com/leersmathieu/deep-detect-drawing/blob/master/modeling%20notebook/object_recognition_model.ipynb)
 
+# Training & accuracy
+
+![train](assets/train.png)
 # Try it yourself !
 
 On my serveur http://deepdrawing.tamikara.xyz/
